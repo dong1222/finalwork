@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    .header{
+        height: 60px;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .div1{
+        padding: 20px;
+        font-size: 15px;
+        display: inline-flex;
+        flex-grow: 1;
+        align-items: center;
+    }
+    .div2{
+        padding: 15px;
+        font-size: 10px;
+        display: inline-flex;
+        flex-grow: 1;
+        align-items: center;
+    }
+    a{
+        color: rgb(247, 241, 241);
+        text-decoration: none;
+    }
+    a:hover{
+        color: orange;
+    }
+
+    .geci{
+        width: 65%;
+        height: 400px;
+        float: left;
+        text-align: center;
+    }
+    .xiyang{
+        width: 35%;
+        height: 400px;
+       
+        float: left;
+    }
+    .ci{
+        font-size: 15px;
+    }
+    .xitu{
+        animation: rotateImg 5s linear infinite;
+    }
+    @keyframes rotateImg{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+
+
+    .music{
+        width: 400px;
+        height: 10px;
+        
+    }
+    #prograssBar {
+        float: left;
+        position: relative;
+        width: 240px;
+        height: 4px;
+        background-color: blueviolet;
+        margin: 10px 10px 0 0;
+        display: inline;
+    }
+
+    .prograssBar {
+        float: left;
+        width: 0px;
+        height: 4px;
+        background: #1af0e5c4;
+    }
+
+    #wp_bufBar {
+        float: left;
+        width: 0px;
+        height: 4px;
+        background: url(images/zong2.png);
+    }
+
+    #wp_processBtn {
+        float: left;
+        width: 10px;
+        height: 10px;
+        background: url(images/zong2.png) 0 -128px;
+        position: absolute;
+        top: -3px;
+    }
+
+
+    #wp_playTime {
+        width: 10px;
+        float: left;
+       margin-top: 3px;
+       margin-left: 3px;
+        font-size: 12px;
+        color: black;
+        display: inline
+    }
+    #wp_mute {
+        float: left;
+        position: relative;
+        width: 43px;
+        height: 28px;
+        background: url(images/jingyin1.png);
+        margin-top: 0px;
+        margin-left: 35px;
+        z-index: 13;
+    }
+    .xiazai1{
+        margin: 40px 0px 0px 80px;
+        border-radius: 5em;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .pinglun{
+        width: 50%;
+        margin-left: 25%;
+        padding: 0;
+        border: white solid 1px;
+    }
+    .touxiang{
+        float: left;
+        width: 60px;
+        height: 60px;
+        border: white solid 1px;
+    }
+    .ping{
+        float: right;
+
+        width: 80%;
+        height: 80px;
+        border: pink solid 1px;
+    }
+    .ping_bottom{
+        width: 100%;
+        height: 40px;
+        margin-top: 90px;
+        border: white solid 1px;
+    }
+    .but{
+        float: right;
+        color: white;
+        background-color: orange;
+    }
+    .jingcai{
+        width: 50%;
+        margin-left: 25%;
+        height: 50px;
+        border: white solid 1px;
+    }
+
+    .ziyi img{
+        float: left;
+        margin-top: 10px;
+    }
+        .name{
+        color: #dca513;
+        float: left;
+        margin-left: 13px;
+        margin-top: 13px;
+        width: 670px;
+    }
+    .neirong{
+        float: left;
+        margin-left: 13px;
+        margin-top: 8px;
+        width: 670px;
+        font-size: 15px;
+    }
+    .riqi{
+        float: left;
+        margin-left: 13px;
+        margin-top: 8px;
+        width: 670px;
+        font-size: 10px;
+        color: grey;
+    }
+    .fenye{
+        width: 300px;
+        height: 30px;
+        margin-top: 50px;
+        margin-left: 40%;
+    }
+</style>
+<body>
+    <div class="header">
+        <div class="div1" style="padding-left: 180px;">
+            <img src="images/kuyin.jpg" class="kuyin"/>
+        </div>
+        <div class="div1">
+            <a href="#" class="shouye">首页</a>
+        </div>
+        <div class="div1">
+            <a href="#" class="bangdan">榜单</a>
+        </div>
+        <div class="div1">
+            <a href="#" class="geshou">歌手</a>
+        </div>
+        <div class="div1">
+            <a href="#" class="xiazai">下载酷我客户端</a>
+        </div>
+        <div class="div2">
+            <canvas id="canvas1" width="16" height="16"></canvas>
+            <a href="#" class="meinv">美女秀</a>
+        </div>
+        <div class="div2">
+            <canvas id="canvas2" width="16" height="16"></canvas>
+            <a href="#" class="kuwo">酷我耳机</a>
+        </div>
+        <div class="div2">
+            <canvas id="canvas3" width="16" height="16"></canvas>
+            <a href="#" class="vip">VIP会员</a>
+        </div>
+        <div class="div2">
+            <canvas id="canvas4" width="16" height="16"></canvas>
+            <a href="#" class="ting">i听</a>
+        </div>
+        <div class="div2">
+            <a href="#" class="gengduo">更多服务</a>
+        </div>
+        <div class="div2">
+            <a href="#" class="denglu">登录</a>
+        </div>
+        <div class="div2" id="b">
+            <img src="images/sousuo.png" class="sou" style="padding-right: 150px;"/>
+        </div>
+    </div>
+    <div class="zhong">
+        <div class="geci">
+            <p style="font-size: 20px;">喜羊羊</p>
+            <span style="font-size: 15px;">专辑：</span><span style="color: orange;font-size: 15px;">儿歌大全</span>
+            <span style="font-size: 15px;">歌手：</span><span style="color: orange;font-size: 15px;">华语群星</span>
+            &nbsp;&nbsp;&nbsp;<span style="font-size: 8px;">分享&nbsp;&nbsp;&nbsp;</span>
+            <img src="images/pinglun.jpg"/>
+            <span style="color: orange;font-size: 8px;">评论</span>
+            <p style="font-size: 10px;">上传时间：2015-10-02 歌曲来源：民大相思湖网球社</p>
+            <hr style="width: 80%;opacity: 0.5;color: rgba(208, 219, 208, 0.925);">
+            <p class="ci">在所有天气 拥有叫人 大笑的力量</p>
+            <p class="ci">虽然我只是羊</p>
+            <p class="ci">虽然我只是羊</p>
+            <p class="ci">喜羊羊 美羊羊 懒羊羊 沸羊羊</p>
+            <p class="ci">慢羊羊 软绵绵 红太狼 灰太狼</p>
+        </div>
+        <div class="xiyang">
+                <img src="images/xi.jpg" style="border-radius: 100%;padding: 10%; margin-left: 45px;" class="xitu">
+            <audio src="images/biekanwo.mp3" id="mymusic"></audio>
+
+            <div class="music">
+                <div id="wp_playBtn">
+                    <img src="images/zanting.jpg" style="float: left; margin-top: -10px;margin-right: 10px;">
+                </div>
+                
+                <div id="prograssBar">
+                    <div id="wp_bufBar">
+                      <div class="prograssBar" id="wp_processBar"></div>
+                      <a href="##" class="schedule_btn" id="wp_processBtn" style="left: 0;"></a>
+                    </div>
+                </div>
+                <p id="wp_playTime">00.00</p>
+                <div id="wp_mute">
+                </div>
+            </div>
+            <div class="xiazai1" style="width: 200px;height: 50px;background-color: rgb(106, 54, 202);">
+                <div class="mianfei">
+                </div>
+                <img src="images/zong3.jpg">
+                免费下载这首歌
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p style="font-size: 10px;margin-left: 380px;">评论&nbsp;&nbsp;&nbsp;1703条评论</p>
+        <hr style="width: 50%;opacity: 0.5;color: rgba(208, 219, 208, 0.925);">
+        <div class="pinglun">
+            <div class="touxiang">
+                <img src="images/kuwo.jpg">
+            </div>
+            <textarea class="ping" id="memo" placeholder="分享你的音乐见解"></textarea>
+            <div class="ping_bottom">
+                <input type="button" value="评论" class="but" onclick="saveStorage('memo');" />
+            </div>
+        </div>
+        <div class="jingcai">
+            <p style="font-size: 8px;">精彩评论</p>
+            <div id="msg" class="guo">
+
+            </div>
+            <div class="ziyi">
+                <img src="images/yi.png">
+                <div class="name">郭子仪<br/></div>
+                <div class="neirong">Too</div>
+                <div class="riqi">2017-06-10 07:00:42</div>
+            </div>
+            <div class="ziyi">
+                <img src="images/kuwo.jpg">
+                <div class="name">Forget<br/></div>
+                <div class="neirong">我喜欢很多歌曲，喜欢过很多唱歌的人，那些有时不是我的爱好，已经成为了我的青春</div>
+                <div class="riqi">2017-06-03 16:58:02</div>
+               </div>
+               <div class="ziyi">
+                <img src="images/kuwo.jpg">
+                <div class="name">亚里士多德<br/></div>
+                <div class="neirong">学校晚会表演这首(✪ω✪)</div>
+                <div class="riqi">2017-05-14 16:16:53</div>
+               </div>
+            </div>
+            <div class="fenye">
+                <img src="images/fenye.png">
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+<script>
+    var canvas=document.getElementById("canvas1");
+    var canvas2=document.getElementById("canvas2");
+    var canvas3=document.getElementById("canvas3");
+    var canvas4=document.getElementById("canvas4");
+    var context=canvas.getContext('2d');
+    var context2=canvas2.getContext('2d');
+    var context3=canvas3.getContext('2d');
+    var context4=canvas4.getContext('2d');
+    var img=new Image();
+    img.src='images/zong.png';
+    img.onload=function(){
+        context.drawImage(img,0,0,16,16,0,0,16,16);
+        context2.drawImage(img,0,0,16,16,0,0,16,16);
+        context3.drawImage(img,0,0,16,16,0,0,16,16);
+        context4.drawImage(img,0,0,16,16,0,0,16,16);
+    }
+
+    var playbtn = document.getElementById("wp_playBtn");
+    var audio = document.getElementById("mymusic");
+    var playti = document.getElementById("wp_playTime");
+    var soud = document.getElementById("wp_mute");
+    var a = 0;
+    var s = 0;
+    var second = 1;
+    var minute = 0;
+    function b(){
+      document.getElementById("wp_processBar").style.width = (audio.currentTime/audio.duration)*240 + "px";
+      document.getElementById("wp_processBtn").style.left = (audio.currentTime/audio.duration)*240 + "px";
+      if(audio.currentTime == audio.duration){
+        clearInterval(time1);
+      }
+    }
+
+    function time(){
+      if(minute<10){
+        if(second<10){
+          playti.innerHTML="0"+minute+":"+"0"+second;
+          second++;
+        }else if(second<60){
+          playti.innerHTML="0"+minute+":"+second;
+          second++;
+        }else{
+          second=0;
+          minute++;
+          playti.innerHTML="0"+minute+":"+"0"+second;
+          second=1;
+        }
+      }
+    }
+
+    playbtn.onclick = function(){
+      a++;
+      if(a%2 == 1){
+        audio.play();
+        playbtn.setAttribute('class','zan');
+        b1 = setInterval("b()",100);
+        time1 = setInterval("time()",1000);
+      }else{
+        audio.pause();
+        playbtn.setAttribute('class','play');
+        clearInterval(b1);
+        clearInterval(time1);
+      }
+    }
+    
+    soud.onclick = function(){
+      s++;
+      if(s%2 == 0){
+        audio.muted = false;
+      }else{
+        audio.muted = true;
+      }
+    }
+
+    function saveStorage(id) {
+        var data = document.getElementById(id).value;
+        var time = new Date().getTime();
+        localStorage.setItem(time, data);
+        loadStorage('msg');
+    }
+    function loadStorage(id) {
+        var result = '<div style="border:red solid 1px;width:315px; height:30px;font-size:10px;">';
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            var date = new Date();
+            date.setTime(key); 
+            var datestr = date.toGMTString();
+            result += '<tr><td>' + value + '</td><td>' + datestr + '</td></tr>';
+        }
+        result += '</div>';
+        var target = document.getElementById(id);
+        target.innerHTML = result;
+    }
+</script>
+</html>
